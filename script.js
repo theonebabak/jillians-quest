@@ -1,50 +1,5 @@
-// Countdown: 7:00 PM Eastern Time, tomorrow.
-const TARGET = computeTarget();
-
-function computeTarget() {
-  const nowParts = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/New_York',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  }).formatToParts(new Date());
-
-  const get = (type) => Number(nowParts.find((part) => part.type === type).value);
-  const tomorrowET = new Date(Date.UTC(get('year'), get('month') - 1, get('day')));
-  tomorrowET.setUTCDate(tomorrowET.getUTCDate() + 1);
-
-  const year = tomorrowET.getUTCFullYear();
-  const month = String(tomorrowET.getUTCMonth() + 1).padStart(2, '0');
-  const day = String(tomorrowET.getUTCDate()).padStart(2, '0');
-  const offsetMinutes = etOffsetMinutes(tomorrowET);
-  const sign = offsetMinutes >= 0 ? '+' : '-';
-  const absOffset = Math.abs(offsetMinutes);
-  const offsetHours = String(Math.floor(absOffset / 60)).padStart(2, '0');
-  const offsetMins = String(absOffset % 60).padStart(2, '0');
-
-  return new Date(`${year}-${month}-${day}T19:00:00${sign}${offsetHours}:${offsetMins}`);
-}
-
-function etOffsetMinutes(dateUTC) {
-  const parts = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/New_York',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  }).formatToParts(dateUTC);
-
-  const get = (type) => Number(parts.find((part) => part.type === type).value);
-  const asUTC = Date.UTC(get('year'), get('month') - 1, get('day'), get('hour'), get('minute'), get('second'));
-  return Math.round((asUTC - dateUTC.getTime()) / 60000);
-}
+// Countdown: June 7, 2026 at 7:00 PM Eastern Time.
+const TARGET = new Date('2026-06-07T19:00:00-04:00');
 
 const el = {
   big: document.getElementById('bigNumber'),

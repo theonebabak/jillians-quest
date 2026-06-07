@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jillian's Personal Quest for Love</title>
+  <meta name="description" content="A countdown to meeting the best kisser in the world." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-mark">J</span>
+      <span class="brand-text">Jillian's Personal Quest for Love</span>
+    </a>
+    <div class="nav-actions">
+      <a class="nav-link" href="#gallery">evidence</a>
+      <a class="nav-button" href="#finale">7:00 PM</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-backdrop" aria-hidden="true">
+        <img class="backdrop-photo backdrop-photo--one" src="photo_2026-06-06_20-29-50.jpg" alt="" />
+        <img class="backdrop-photo backdrop-photo--two" src="photo_2026-06-06_20-30-06.jpg" alt="" />
+        <img class="backdrop-photo backdrop-photo--three" src="photo_2026-06-06_20-30-13.jpg" alt="" />
+      </div>
+
+      <div class="hero-inner">
+        <p class="eyebrow">countdown locked</p>
+        <h1 class="hero-title" id="hero-title">
+          <span>Only <strong id="bigNumber">--</strong> <em id="bigUnit">hours</em></span>
+          <span>until I meet the</span>
+          <span>best kisser in the world.</span>
+        </h1>
+
+        <div class="hero-panel">
+          <div class="clock" id="clock" aria-live="polite">
+            <div class="clock-cell">
+              <span class="clock-num" id="days">00</span>
+              <span class="clock-label">days</span>
+            </div>
+            <div class="clock-cell">
+              <span class="clock-num" id="hours">00</span>
+              <span class="clock-label">hours</span>
+            </div>
+            <div class="clock-cell">
+              <span class="clock-num" id="minutes">00</span>
+              <span class="clock-label">minutes</span>
+            </div>
+            <div class="clock-cell">
+              <span class="clock-num" id="seconds">00</span>
+              <span class="clock-label">seconds</span>
+            </div>
+          </div>
+          <div class="target-row">
+            <span>target</span>
+            <strong>7:00 PM ET</strong>
+            <span>tomorrow</span>
+          </div>
+        </div>
+
+        <a href="#gallery" class="scroll-cue" aria-label="Scroll to evidence">
+          <span>scroll</span>
+          <span class="arrow" aria-hidden="true">&darr;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="intro reveal" id="gallery">
+      <p class="eyebrow center">exhibit a-d</p>
+      <h2 class="intro-title">Documented proof that the wait will be worth it.</h2>
+    </section>
+
+    <section class="gallery reveal" aria-label="Evidence gallery">
+      <button class="gallery-card gallery-card--large" type="button" data-gallery-index="0">
+        <img src="photo_2026-06-06_20-29-50.jpg" alt="Gallery photo 1" loading="lazy" />
+        <span class="gallery-meta"><span>01</span>The smile</span>
+      </button>
+      <button class="gallery-card" type="button" data-gallery-index="1">
+        <img src="photo_2026-06-06_20-30-06.jpg" alt="Gallery photo 2" loading="lazy" />
+        <span class="gallery-meta"><span>02</span>The look</span>
+      </button>
+      <button class="gallery-card" type="button" data-gallery-index="2">
+        <img src="photo_2026-06-06_20-30-09.jpg" alt="Gallery photo 3" loading="lazy" />
+        <span class="gallery-meta"><span>03</span>The vibe</span>
+      </button>
+      <button class="gallery-card gallery-card--wide" type="button" data-gallery-index="3">
+        <img src="photo_2026-06-06_20-30-13.jpg" alt="Gallery photo 4" loading="lazy" />
+        <span class="gallery-meta"><span>04</span>The whole thing</span>
+      </button>
+    </section>
+
+    <section class="closing reveal" id="finale">
+      <p class="eyebrow center">final checkpoint</p>
+      <h2 class="closing-title">See you at <span>7:00 PM</span>.</h2>
+      <p class="closing-sub">I'll be at your door. Be ready.</p>
+      <div class="mini-clock" id="miniClock">-- : -- : --</div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+    <button class="lightbox-close" type="button" aria-label="Close photo viewer">&times;</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
+    <figure class="lightbox-frame">
+      <img id="lightboxImage" src="" alt="" />
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next photo">&rsaquo;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

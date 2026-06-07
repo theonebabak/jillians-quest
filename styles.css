@@ -495,8 +495,23 @@ button { font: inherit; }
 }
 
 @media (max-width: 780px) {
-  .brand-text { display: none; }
-  .nav-actions { gap: 10px; }
+  .brand {
+    min-width: 0;
+  }
+  .brand-text {
+    display: block;
+    max-width: calc(100vw - 112px);
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 1.1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .nav-actions { gap: 8px; }
+  .nav-link {
+    font-size: 12px;
+    letter-spacing: 0.07em;
+  }
   .nav-button { display: none; }
   .hero {
     padding-top: 112px;
@@ -553,9 +568,15 @@ button { font: inherit; }
   .nav {
     padding: 14px 16px;
   }
+  .nav-actions {
+    display: none;
+  }
   .brand-mark {
     width: 40px;
     height: 40px;
+  }
+  .brand-text {
+    max-width: calc(100vw - 88px);
   }
   .hero-panel {
     padding: 10px;
